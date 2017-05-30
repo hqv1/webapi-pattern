@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <AssemblyName>WebApiPattern.Logic</AssemblyName>
+    <RootNamespace>WebApiPattern.Logic</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hqv.CSharp.Common" Version="0.0.3" />
+    <PackageReference Include="Hqv.CSharp.Common.Web" Version="0.0.3" />
+  </ItemGroup>
+
+</Project>

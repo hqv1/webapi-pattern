@@ -1,0 +1,1424 @@
+{
+	"variables": [],
+	"info": {
+		"name": "WebApiPattern",
+		"_postman_id": "1c93d26d-8318-3874-3dc6-bfb305c037ac",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Create Database",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is No Content\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/system/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Repopulate Database",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is No Content\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/system/repopulate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is OK\"] = responseCode.code === 200;",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"Body has id returned\"] = data.id === 1;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product - Shape Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is OK\"] = responseCode.code === 200;",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"Body does not have an ASIN field\"] = !responseCode.name.has(\"asin\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/1?fields=id,name",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product - Not Found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Not Found\"] = responseCode.code === 404;",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"Error code is Resource Not Found\"] = data.code === 4040;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/239493",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product - In XML",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is OK\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is XML\"] = postman.getResponseHeader(\"Content-Type\").has(\"application/xml\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product - Invalid Accept Content",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Not Acceptable\"] = responseCode.code === 406;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/soap+xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product - Shape Bad Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Bad Request\"] = responseCode.code === 400;",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"Body contains error code (Bad Fields parameters)\"] = data[\"code\"] === 4001"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/1?fields=id,name4",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Ok\"] = responseCode.code === 200;",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"Products returned in body\"] = data[2].id === 3"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products w Pagination - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Ok\"] = responseCode.code === 200;",
+							"tests[\"X-Pagination is present\"] = postman.getResponseHeader(\"X-Pagination\");",
+							"",
+							"var paginationData = JSON.parse(postman.getResponseHeader(\"X-Pagination\"));"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products?pageNumber=2&pageSize=1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products - Filter Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Ok\"] = responseCode.code === 200;",
+							"tests[\"X-Pagination is present\"] = postman.getResponseHeader(\"X-Pagination\");",
+							"",
+							"",
+							"var paginationData = JSON.parse(postman.getResponseHeader(\"X-Pagination\"));",
+							"tests[\"No previous page link\"] = paginationData.previousPageLink === null;",
+							"tests[\"Has next page link\"] = paginationData.nextPageLink.has(\"api/v1/products?ProductType=Non-Perishable&pageNumber=2&pageSize=1\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products?productType=Non-Perishable&pageSize=1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products - Search Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is OK\"] = responseCode.code === 200;",
+							"",
+							"var responseJson = JSON.parse(responseBody);",
+							"tests[\"Product was returned\"] = responseJson[0].id === 2"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products?pageSize=1&searchQuery=f&pageNumber=2",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products - OrderBy Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is OK\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products?orderBy=name desc",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products - OrderBy Bad Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Bad Request\"] = responseCode.code === 400;",
+							"",
+							"var responseJson = JSON.parse(responseBody);",
+							"tests[\"Error code is Bad OrderBy parameters\"] = responseJson.code === 4002;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products?orderBy=namee",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products - Shape Data Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is OK\"] = responseCode.code === 200;",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"Body does not have an ASIN field\"] = !data[0].name.has(\"asin\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products?fields=id, name, upc&pageSize=2",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products - Shape Data Bad Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Bad Request\"] = responseCode.code === 400;",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"Error code is Bad Fields parameters\"] = data.code === 4001"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products?fields=id, name, upc1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product - Cache Success",
+			"request": {
+				"url": "{{url}}/api/v1/products/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "If-None-Match",
+						"value": "4DEC9495D0DEBC298D66B888C9BEAAFA",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Product - If-Match Success",
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "If-Match",
+						"value": "912424D39E8371BAC91D444BC0C02368",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"vendor\": \"Cellucor\",\n  \"name\": \"C4 Original Explosive Pre-Workout Supplement\",\n  \"description\": \"Updated- Unicorn Flavor, 6.3 Ounce\",\n  \"asin\": \"B01N272UAI\",\n  \"upc\": \"810390028399\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Created\"] = responseCode.code === 201;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/?correlationId=2993200AAA",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"vendor\": \"Meguiar\",\n  \"name\": \"X2000 Water Magnet Microfiber Drying Towel\",\n  \"asin\": \"B0009IQZFM\",\n  \"upc\": \"740528465416\",\n  \"productType\" : \"Non-Perishable\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Product - Bad Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Bad Request\"] = responseCode.code === 400;",
+							"",
+							"var responseJson = JSON.parse(responseBody);",
+							"tests[\"Error code is Bad Request Body\"] = responseJson.code === 4000;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/?correlationId=2993200AAA",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"x\"=30\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Product - Validation Error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Unprocessable Entity\"] = responseCode.code === 422;",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/?correlationId=2993200AAA",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"vendor\": \"Meguiar\",\n  \"name\": \"X2000 Water Magnet Microfiber Drying Towel\",\n  \"asin\": \"B0009IQZFM\",\n  \"upc\": \"740528465416AAA\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Product - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is No Content\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/1?correlationId=2993200AAA",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"vendor\": \"Cellucor\",\n  \"name\": \"C4 Original Explosive Pre-Workout Supplement\",\n  \"description\": \"Updated- Unicorn Flavor, 6.3 Ounce\",\n  \"asin\": \"B01N272UAI\",\n  \"upc\": \"810390028399\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Product - Validation Error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Unprocessable Entity\"] = responseCode.code === 422;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/1?correlationId=2993200AAA",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"1vendor1\": \"Cellucor\",\n  \"name\": \"C4 Original Explosive Pre-Workout Supplement\",\n  \"description\": \"Updated- Unicorn Flavor, 6.3 Ounce\",\n  \"asin\": \"B01N272UAI\",\n  \"upc\": \"810390028399\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is No Content\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/1/?correlationId=2993200AAA",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/upc\",\n\t\t\"value\": \"00111111\"\n\t},\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/description\",\n\t\t\"value\": \"Patched- Unicorn Flavor, 6.3 Ounce\"\n\t}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Product - Invalid Property",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Unprocessable Entity\"] = responseCode.code === 422;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/1/?correlationId=2993200AAA",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/name33\",\n\t\t\"value\": \"Updated - adidias shoes\"\n\t}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Product - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is No Content\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/2",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product Collection - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is OK\"] = responseCode.code === 200;",
+							"",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Returned requested products\"] = jsonData.length === 2;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/productcollections/(1,3)",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Product Collection - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Created\"] = responseCode.code === 201;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Returned requested products\"] = jsonData.length === 2;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/productcollections/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"name\": \"Tennis Ball\",\n    \"vendor\": \"Micka\",\n    \"description\": \"TestDescription\"\n  },\n  {\n    \"name\": \"Diet Coke\",\n    \"vendor\": \"Coca Cola\",\n    \"description\": \"TestDescription\"\n  }\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Product Collection - Bad Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Unprocessable Entity\"] = responseCode.code === 422;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/productcollections/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"name1\": \"Tennis Ball\",\n    \"description\": \"TestDescription\"\n  },\n  {\n    \"name\": \"Diet Coke\",\n    \"description\": \"TestDescription\"\n  }\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Sellers For Product - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Ok\"] = responseCode.code === 200;",
+							"",
+							"var responseJson = JSON.parse(responseBody);",
+							"tests[\"Return sellers\"] = responseJson.length === 3"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/1/sellers",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Sellers For Product - Product not found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Not Found\"] = responseCode.code === 404;",
+							"",
+							"var responseJson = JSON.parse(responseBody);",
+							"tests[\"Return Code is Resource Not Found\"] = responseJson.code === 4041"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/3994/sellers",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Seller For Product - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Ok\"] = responseCode.code === 200;",
+							"",
+							"var responseJson = JSON.parse(responseBody);",
+							"tests[\"Seller id is valid\"] = responseJson.id === 1;",
+							"tests[\"Seller name is valid\"] = responseJson.name === \"Amazon\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/api/v1/products/1/sellers/1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Seller - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Created\"] = responseCode.code === 201;",
+							"",
+							"var responseJson = JSON.parse(responseBody);",
+							"tests[\"Body contains price\"] = responseJson.price === 39.9"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/3/sellers/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"BestBuy\",\n  \"quantity\": 1,\n  \"price\": 39.90,\n  \"url\": \"http://www.bestbuy.com/site/logitech-g602-wireless-gaming-mouse-black/2397012.p\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Seller - XML Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Created\"] = responseCode.code === 201;",
+							"tests[\"Content-Type is XML\"] = postman.getResponseHeader(\"Content-Type\").has(\"application/xml\");",
+							"",
+							"var responseJson = xml2Json(responseBody);",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/3/sellers/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<SellerForCreationModel xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/WebApiPattern.AspCore.Models\">\n    <Name>BestBuy</Name>\n    <Price>39.90</Price>\n    <Quantity>1</Quantity>\n    <Url>http://www.bestbuy.com/site/logitech-g602-wireless-gaming-mouse-black/2397012.p/</Url>\n</SellerForCreationModel>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Seller - Failed Validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Unprocessable Entity\"] = responseCode.code === 422;",
+							"",
+							"var responseJson = JSON.parse(responseBody);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/3/sellers/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"BestBuy\",\n  \"quantity\": -1,\n  \"price\": 39.90,\n  \"url\": \"http://www.bestbuy.com/site/logitech-g602-wireless-gaming-mouse-black/2397012.p\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Seller - New Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Created\"] = responseCode.code === 201;",
+							"",
+							"var responseJson = JSON.parse(responseBody);",
+							"tests[\"Id should be one requested\"] = responseJson.id === 12;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/3/sellers/12",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"BestBuy\",\n  \"quantity\": 1,\n  \"price\": 39.90,\n  \"url\": \"http://www.bestbuy.com/site/logitech-g602-wireless-gaming-mouse-black/2397012.p\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Seller - New Failed because SellerID exist under diff product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is BadRequest\"] = responseCode.code === 400;",
+							"",
+							"var responseJson = JSON.parse(responseBody);",
+							"tests[\"Error code is Parent Mismatch\"] = responseJson.code === 4003;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/3/sellers/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"BestBuy\",\n  \"quantity\": 1,\n  \"price\": 39.90,\n  \"url\": \"http://www.bestbuy.com/site/logitech-g602-wireless-gaming-mouse-black/2397012.p\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Seller - Update Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is No Content\"] = responseCode.code === 204;",
+							"",
+							"var responseJson = JSON.parse(responseBody);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/1/sellers/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Amazon\",\n\t\"quantity\": 2,\n\t\"price\": 55.00,\n\t\"url\": \"https://www.amazon.com/Cellucor-Original-Explosive-Pre-Workout-Supplement/dp/B01N272UAI/\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Seller - New Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Created\"] = responseCode.code === 201;",
+							"",
+							"var responseJson = JSON.parse(responseBody);",
+							"tests[\"Id should be one requested\"] = responseJson.id === 40;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/1/sellers/40",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/name\",\n\t\t\"value\": \"Costco\"\n\t},\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/quantity\",\n\t\t\"value\": 2\n\t},\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/price\",\n\t\t\"value\": 39.99\n\t},\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/url\",\n\t\t\"value\": \"http://www.costco.com/C4/20039\"\n\t}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Seller - Update Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is No Content\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/1/sellers/1",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/quantity\",\n\t\t\"value\": 2\n\t},\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/price\",\n\t\t\"value\": 59.99\n\t}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Seller - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is No Content\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/1/sellers/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Options Products - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is OK\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Allow is present\"] = postman.getResponseHeader(\"Allow\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products",
+				"method": "OPTIONS",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Head Products - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is OK\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/1",
+				"method": "HEAD",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Head Products - Not Found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is Not Found\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:50346/api/v1/products/4",
+				"method": "HEAD",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Product Error - Create exception",
+			"request": {
+				"url": "{{url}}/api/v1/products/error?say=hi",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"body\":\"isReady\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

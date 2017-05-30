@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <AssemblyName>WebApiPattern.Asp.Shared</AssemblyName>
+    <RootNamespace>WebApiPattern.Asp.Shared</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.0.2" />
+    <PackageReference Include="FluentValidation" Version="6.4.0" />
+    <PackageReference Include="Hqv.CSharp.Common" Version="0.0.3" />
+    <PackageReference Include="Hqv.CSharp.Common.Web" Version="0.0.3" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data.Sqlite\Data.Sqlite.csproj" />
+    <ProjectReference Include="..\Logic\Logic.csproj" />
+  </ItemGroup>
+
+</Project>
