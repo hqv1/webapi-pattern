@@ -8,8 +8,8 @@ using Hqv.CSharp.Common.Interfaces;
 using Hqv.CSharp.Common.Web.Api;
 using Microsoft.Data.Sqlite;
 using WebApiPattern.Data.Sqlite.Models;
-using WebApiPattern.Logic;
-using WebApiPattern.Logic.Entities;
+using WebApiPattern.Domain;
+using WebApiPattern.Domain.Entities;
 
 namespace WebApiPattern.Data.Sqlite
 {

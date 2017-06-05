@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Hqv.CSharp.Common.Extensions;
-using WebApiPattern.Logic.Entities;
+using WebApiPattern.Domain.Entities;
 
 namespace WebApiPattern.Asp.Shared.Ordering
 {

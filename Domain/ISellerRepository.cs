@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebApiPattern.Logic.Entities;
+using WebApiPattern.Domain.Entities;
 
-namespace WebApiPattern.Logic
+namespace WebApiPattern.Domain
 {
     public interface ISellerRepository
     {

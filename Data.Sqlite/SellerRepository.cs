@@ -5,8 +5,8 @@ using Dapper;
 using Hqv.CSharp.Common.Interfaces;
 using Microsoft.Data.Sqlite;
 using WebApiPattern.Data.Sqlite.Models;
-using WebApiPattern.Logic;
-using WebApiPattern.Logic.Entities;
+using WebApiPattern.Domain;
+using WebApiPattern.Domain.Entities;
 
 namespace WebApiPattern.Data.Sqlite
 {

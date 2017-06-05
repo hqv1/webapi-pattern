@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using WebApiPattern.Logic;
+using WebApiPattern.Domain;
 
 namespace WebApiPattern.Asp.CoreCore.Controllers
 {

@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "WebApiPattern",
-		"_postman_id": "1c93d26d-8318-3874-3dc6-bfb305c037ac",
+		"_postman_id": "b249c4de-7f61-cf52-59dd-180ef5c180ea",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -622,14 +622,35 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is Unprocessable Entity\"] = responseCode.code === 422;",
+							"tests[\"Status code is Bad Request\"] = responseCode.code === 400;",
 							""
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "{{url}}/api/v1/products/?correlationId=2993200AAA",
+				"url": {
+					"raw": "{{url}}/api/v1/products/?correlationId=2993200AAA",
+					"auth": {},
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "correlationId",
+							"value": "2993200AAA",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -695,13 +716,34 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is Unprocessable Entity\"] = responseCode.code === 422;"
+							"tests[\"Status code is Bad Request\"] = responseCode.code === 400;"
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "{{url}}/api/v1/products/1?correlationId=2993200AAA",
+				"url": {
+					"raw": "{{url}}/api/v1/products/1?correlationId=2993200AAA",
+					"auth": {},
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"1"
+					],
+					"query": [
+						{
+							"key": "correlationId",
+							"value": "2993200AAA",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "PUT",
 				"header": [
 					{
@@ -767,13 +809,35 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is Unprocessable Entity\"] = responseCode.code === 422;"
+							"tests[\"Status code is Bad Request\"] = responseCode.code === 400;"
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "{{url}}/api/v1/products/1/?correlationId=2993200AAA",
+				"url": {
+					"raw": "{{url}}/api/v1/products/1/?correlationId=2993200AAA",
+					"auth": {},
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"1",
+						""
+					],
+					"query": [
+						{
+							"key": "correlationId",
+							"value": "2993200AAA",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "PATCH",
 				"header": [
 					{
@@ -891,7 +955,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is Unprocessable Entity\"] = responseCode.code === 422;"
+							"tests[\"Status code is Bad Request\"] = responseCode.code === 400;"
 						]
 					}
 				}
@@ -1016,7 +1080,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products/3/sellers/",
+				"url": "{{url}}/api/v1/products/3/sellers/",
 				"method": "POST",
 				"header": [
 					{
@@ -1051,7 +1115,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products/3/sellers/",
+				"url": "{{url}}/api/v1/products/3/sellers/",
 				"method": "POST",
 				"header": [
 					{
@@ -1067,7 +1131,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<SellerForCreationModel xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/WebApiPattern.AspCore.Models\">\n    <Name>BestBuy</Name>\n    <Price>39.90</Price>\n    <Quantity>1</Quantity>\n    <Url>http://www.bestbuy.com/site/logitech-g602-wireless-gaming-mouse-black/2397012.p/</Url>\n</SellerForCreationModel>"
+					"raw": "<SellerForCreationModel xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/WebApiPattern.Asp.Shared.Models\">\n    <Name>BestBuy</Name>\n    <Price>39.90</Price>\n    <Quantity>1</Quantity>\n    <Url>http://www.bestbuy.com/site/logitech-g602-wireless-gaming-mouse-black/2397012.p/</Url>\n</SellerForCreationModel>"
 				},
 				"description": ""
 			},
@@ -1081,7 +1145,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is Unprocessable Entity\"] = responseCode.code === 422;",
+							"tests[\"Status code is Bad Request\"] = responseCode.code === 400;",
 							"",
 							"var responseJson = JSON.parse(responseBody);"
 						]
@@ -1089,7 +1153,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products/3/sellers/",
+				"url": "{{url}}/api/v1/products/3/sellers/",
 				"method": "POST",
 				"header": [
 					{
@@ -1123,7 +1187,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products/3/sellers/12",
+				"url": "{{url}}/api/v1/products/3/sellers/12",
 				"method": "PUT",
 				"header": [
 					{
@@ -1157,7 +1221,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products/3/sellers/1",
+				"url": "{{url}}/api/v1/products/3/sellers/1",
 				"method": "PUT",
 				"header": [
 					{
@@ -1183,14 +1247,13 @@
 						"type": "text/javascript",
 						"exec": [
 							"tests[\"Status code is No Content\"] = responseCode.code === 204;",
-							"",
-							"var responseJson = JSON.parse(responseBody);"
+							""
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products/1/sellers/1",
+				"url": "{{url}}/api/v1/products/1/sellers/1",
 				"method": "PUT",
 				"header": [
 					{
@@ -1224,7 +1287,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products/1/sellers/40",
+				"url": "{{url}}/api/v1/products/1/sellers/40",
 				"method": "PATCH",
 				"header": [
 					{
@@ -1260,7 +1323,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products/1/sellers/1",
+				"url": "{{url}}/api/v1/products/1/sellers/1",
 				"method": "PATCH",
 				"header": [
 					{
@@ -1296,7 +1359,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products/1/sellers/1",
+				"url": "{{url}}/api/v1/products/1/sellers/1",
 				"method": "DELETE",
 				"header": [
 					{
@@ -1334,7 +1397,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products",
+				"url": "{{url}}/api/v1/products",
 				"method": "OPTIONS",
 				"header": [],
 				"body": {
@@ -1359,7 +1422,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products/1",
+				"url": "{{url}}/api/v1/products/1",
 				"method": "HEAD",
 				"header": [],
 				"body": {
@@ -1384,7 +1447,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:50346/api/v1/products/4",
+				"url": "{{url}}/api/v1/products/4",
 				"method": "HEAD",
 				"header": [],
 				"body": {
@@ -1398,7 +1461,28 @@
 		{
 			"name": "Product Error - Create exception",
 			"request": {
-				"url": "{{url}}/api/v1/products/error?say=hi",
+				"url": {
+					"raw": "{{url}}/api/v1/products/error?say=hi",
+					"auth": {},
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"error"
+					],
+					"query": [
+						{
+							"key": "say",
+							"value": "hi",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "POST",
 				"header": [
 					{

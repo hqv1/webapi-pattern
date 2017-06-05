@@ -1,4 +1,4 @@
-﻿namespace WebApiPattern.Logic
+﻿namespace WebApiPattern.Domain
 {
     /// <summary>
     /// Product filter parameters. 

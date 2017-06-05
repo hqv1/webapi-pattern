@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data.Sqlite\Data.Sqlite.csproj" />
-    <ProjectReference Include="..\Logic\Logic.csproj" />
   </ItemGroup>
 
 </Project>

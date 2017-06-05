@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace WebApiPattern.Logic.Entities
+namespace WebApiPattern.Domain.Entities
 {
     /// <summary>
     /// Product entity

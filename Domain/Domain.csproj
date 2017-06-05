@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
-    <AssemblyName>WebApiPattern.Logic</AssemblyName>
-    <RootNamespace>WebApiPattern.Logic</RootNamespace>
+    <AssemblyName>WebApiPattern.Domain</AssemblyName>
+    <RootNamespace>WebApiPattern.Domain</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

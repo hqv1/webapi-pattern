@@ -1,4 +1,4 @@
-﻿namespace WebApiPattern.Logic.Entities
+﻿namespace WebApiPattern.Domain.Entities
 {
     /// <summary>
     /// Seller entity

@@ -10,8 +10,8 @@ using Hqv.CSharp.Common.Web.Api;
 using Marvin.JsonPatch;
 using WebApiPattern.Asp.Shared.Models;
 using WebApiPattern.Asp.Shared.Validators;
-using WebApiPattern.Logic;
-using WebApiPattern.Logic.Entities;
+using WebApiPattern.Domain;
+using WebApiPattern.Domain.Entities;
 
 namespace WebApiPattern.Asp.Framework.Controllers
 {

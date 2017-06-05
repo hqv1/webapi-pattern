@@ -1,7 +1,7 @@
 using AutoMapper;
 using Hqv.CSharp.Common.Web.Api;
 using WebApiPattern.Asp.Shared.Models;
-using WebApiPattern.Logic.Entities;
+using WebApiPattern.Domain.Entities;
 using IMapper = AutoMapper.IMapper;
 
 namespace WebApiPattern.Asp.Shared

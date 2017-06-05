@@ -23,7 +23,7 @@ using WebApiPattern.Asp.Shared;
 using WebApiPattern.Asp.Shared.Ordering;
 using WebApiPattern.Asp.Shared.Validators;
 using WebApiPattern.Data.Sqlite;
-using WebApiPattern.Logic;
+using WebApiPattern.Domain;
 
 namespace WebApiPattern.Asp.CoreCore
 {

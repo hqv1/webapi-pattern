@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Web.Http;
-using WebApiPattern.Logic;
+using WebApiPattern.Domain;
 
 namespace WebApiPattern.Asp.Framework.Controllers
 {

@@ -158,10 +158,6 @@
       <Project>{f4e782b7-4eda-43b3-bd42-c025d61324d1}</Project>
       <Name>Data.Sqlite</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Logic\Logic.csproj">
-      <Project>{01c003b7-92e1-4c1e-955f-1aec8b2187eb}</Project>
-      <Name>Logic</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

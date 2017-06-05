@@ -6,8 +6,8 @@ using Hqv.CSharp.Common.Web.Api;
 using Microsoft.AspNetCore.Mvc;
 using WebApiPattern.Asp.CoreCore.Helpers;
 using WebApiPattern.Asp.Shared.Models;
-using WebApiPattern.Logic;
-using WebApiPattern.Logic.Entities;
+using WebApiPattern.Domain;
+using WebApiPattern.Domain.Entities;
 
 namespace WebApiPattern.Asp.CoreCore.Controllers
 {

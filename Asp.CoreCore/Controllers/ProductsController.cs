@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using WebApiPattern.Asp.CoreCore.Filters;
 using WebApiPattern.Asp.Shared.Models;
-using WebApiPattern.Logic;
-using WebApiPattern.Logic.Entities;
+using WebApiPattern.Domain;
+using WebApiPattern.Domain.Entities;
 
 namespace WebApiPattern.Asp.CoreCore.Controllers
 {

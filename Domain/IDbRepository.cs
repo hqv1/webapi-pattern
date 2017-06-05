@@ -1,4 +1,4 @@
-namespace WebApiPattern.Logic
+namespace WebApiPattern.Domain
 {
     public interface IDbRepository
     {

@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
 using Hqv.CSharp.Common.Web.Api;
-using WebApiPattern.Logic.Entities;
+using WebApiPattern.Domain.Entities;
 
-namespace WebApiPattern.Logic
+namespace WebApiPattern.Domain
 {
     public interface IProductRepository
     {

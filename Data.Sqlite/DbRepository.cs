@@ -2,8 +2,8 @@
 using System.Data;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using WebApiPattern.Logic;
-using WebApiPattern.Logic.Entities;
+using WebApiPattern.Domain;
+using WebApiPattern.Domain.Entities;
 
 namespace WebApiPattern.Data.Sqlite
 {

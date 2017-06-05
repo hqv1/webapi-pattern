@@ -17,7 +17,7 @@ using Swashbuckle.Application;
 using WebApiPattern.Asp.Shared;
 using WebApiPattern.Asp.Shared.Ordering;
 using WebApiPattern.Data.Sqlite;
-using WebApiPattern.Logic;
+using WebApiPattern.Domain;
 using WebApiThrottle;
 
 namespace WebApiPattern.Asp.Framework

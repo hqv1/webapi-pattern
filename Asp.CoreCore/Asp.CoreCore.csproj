@@ -33,7 +33,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Asp.Shared\Asp.Shared.csproj" />
     <ProjectReference Include="..\Data.Sqlite\Data.Sqlite.csproj" />
-    <ProjectReference Include="..\Logic\Logic.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="appsettings.json">
