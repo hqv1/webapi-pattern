@@ -9,8 +9,8 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.0.2" />
     <PackageReference Include="FluentValidation" Version="6.4.0" />
-    <PackageReference Include="Hqv.CSharp.Common" Version="0.0.3" />
-    <PackageReference Include="Hqv.CSharp.Common.Web" Version="0.0.3" />
+    <PackageReference Include="Hqv.CSharp.Common" Version="0.2.6" />
+    <PackageReference Include="Hqv.CSharp.Common.Web" Version="0.0.8" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
   </ItemGroup>
 

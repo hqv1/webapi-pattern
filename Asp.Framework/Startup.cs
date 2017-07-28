@@ -6,9 +6,8 @@ using System.Web.Http.ExceptionHandling;
 using Autofac;
 using Autofac.Integration.WebApi;
 using FluentValidation.WebApi;
-using Hqv.CSharp.Common;
-using Hqv.CSharp.Common.Extensions;
-using Hqv.CSharp.Common.Interfaces;
+using Hqv.CSharp.Common.Ordering;
+using Hqv.CSharp.Common.Utilities;
 using Microsoft.Owin.Logging;
 using Newtonsoft.Json.Serialization;
 using NLog.Owin.Logging;
@@ -19,6 +18,7 @@ using WebApiPattern.Asp.Shared.Ordering;
 using WebApiPattern.Data.Sqlite;
 using WebApiPattern.Domain;
 using WebApiThrottle;
+using IMapper = Hqv.CSharp.Common.Map.IMapper;
 
 namespace WebApiPattern.Asp.Framework
 {

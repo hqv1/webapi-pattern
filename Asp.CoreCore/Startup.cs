@@ -1,8 +1,9 @@
 ﻿using AspNetCoreRateLimit;
 using FluentValidation.AspNetCore;
-using Hqv.CSharp.Common;
-using Hqv.CSharp.Common.Extensions;
-using Hqv.CSharp.Common.Interfaces;
+using Hqv.CSharp.Common.Logging;
+using Hqv.CSharp.Common.Map;
+using Hqv.CSharp.Common.Ordering;
+using Hqv.CSharp.Common.Utilities;
 using Hqv.CSharp.Common.Web.Api;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -83,7 +84,7 @@ namespace WebApiPattern.Asp.CoreCore
 
             services.AddScoped<IPagedListHelper, PagedListHelper>(); // Helps create a paged list
 
-            services.AddSingleton<Hqv.CSharp.Common.Interfaces.ILogger, Logger>(); // Use Shared Logging
+            services.AddSingleton<IHqvLogger, Hqv.CSharp.Common.Logging.NLog.Logger>(); // Use Shared Logging
             services.AddSingleton<IMapper, Mapper>(); // Use Mapper
          
             services.AddScoped(provider => new DbRepository.Setting(Configuration["db-connection-string"]));

@@ -10,7 +10,7 @@ namespace WebApiPattern.Asp.Shared
     /// Map entities to models
     /// Map models to entities
     /// </summary>
-    public class Mapper : Hqv.CSharp.Common.Interfaces.IMapper
+    public class Mapper : Hqv.CSharp.Common.Map.IMapper
     {
         private readonly MapperConfiguration _mapperConfiguration;
         private readonly IMapper _mapper;

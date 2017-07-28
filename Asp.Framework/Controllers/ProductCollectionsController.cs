@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
-using Hqv.CSharp.Common.Interfaces;
+using Hqv.CSharp.Common.Map;
 using Hqv.CSharp.Common.Web.Api;
 using WebApiPattern.Asp.Framework.Helpers;
 using WebApiPattern.Asp.Shared.Models;

@@ -18,8 +18,9 @@
     <PackageReference Include="AutoMapper" Version="6.0.2" />
     <PackageReference Include="FluentValidation" Version="6.4.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="6.4.0" />
-    <PackageReference Include="Hqv.CSharp.Common" Version="0.0.3" />
-    <PackageReference Include="Hqv.CSharp.Common.Web" Version="0.0.3" />
+    <PackageReference Include="Hqv.CSharp.Common" Version="0.2.6" />
+    <PackageReference Include="Hqv.CSharp.Common.Logging.NLog" Version="0.2.4" />
+    <PackageReference Include="Hqv.CSharp.Common.Web" Version="0.0.8" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
