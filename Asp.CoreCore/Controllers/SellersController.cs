@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Hqv.CSharp.Common.Interfaces;
+using Hqv.CSharp.Common.Map;
 using Hqv.CSharp.Common.Web.Api;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;

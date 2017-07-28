@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Hqv.CSharp.Common.Interfaces;
+using Hqv.CSharp.Common.Map;
 using Hqv.CSharp.Common.Web.Api;
 using Microsoft.AspNetCore.Mvc;
 using WebApiPattern.Asp.CoreCore.Helpers;

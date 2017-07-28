@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hqv.CSharp.Common.Extensions;
+using Hqv.CSharp.Common.Ordering;
 using WebApiPattern.Domain.Entities;
 
 namespace WebApiPattern.Asp.Shared.Ordering

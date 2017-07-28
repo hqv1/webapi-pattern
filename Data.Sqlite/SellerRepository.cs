@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dapper;
-using Hqv.CSharp.Common.Interfaces;
+using Hqv.CSharp.Common.Map;
 using Microsoft.Data.Sqlite;
 using WebApiPattern.Data.Sqlite.Models;
 using WebApiPattern.Domain;

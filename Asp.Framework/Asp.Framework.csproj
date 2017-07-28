@@ -75,11 +75,11 @@
     <Reference Include="FluentValidation.WebApi, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.WebApi.6.4.0\lib\Net45\FluentValidation.WebApi.dll</HintPath>
     </Reference>
-    <Reference Include="Hqv.CSharp.Common, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Hqv.CSharp.Common.0.0.3\lib\netstandard1.3\Hqv.CSharp.Common.dll</HintPath>
+    <Reference Include="Hqv.CSharp.Common, Version=0.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hqv.CSharp.Common.0.2.2\lib\netstandard1.3\Hqv.CSharp.Common.dll</HintPath>
     </Reference>
     <Reference Include="Hqv.CSharp.Common.Web, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Hqv.CSharp.Common.Web.0.0.3\lib\netstandard1.3\Hqv.CSharp.Common.Web.dll</HintPath>
+      <HintPath>..\packages\Hqv.CSharp.Common.Web.0.0.8\lib\netstandard1.3\Hqv.CSharp.Common.Web.dll</HintPath>
     </Reference>
     <Reference Include="Marvin.JsonPatch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Marvin.JsonPatch.1.0.0\lib\portable40-net40+win8+wpa81\Marvin.JsonPatch.dll</HintPath>
@@ -143,7 +143,7 @@
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.4.9\lib\net45\NLog.dll</HintPath>
@@ -207,7 +207,7 @@
       <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq.Dynamic.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.7\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.7.6\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Http.4.3.2\lib\net46\System.Net.Http.dll</HintPath>

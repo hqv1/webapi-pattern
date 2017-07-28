@@ -43,11 +43,14 @@
     <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="Hqv.CSharp.Common, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Hqv.CSharp.Common.0.0.3\lib\netstandard1.3\Hqv.CSharp.Common.dll</HintPath>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.7.1.0\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Hqv.CSharp.Common, Version=0.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hqv.CSharp.Common.0.2.6\lib\netstandard1.3\Hqv.CSharp.Common.dll</HintPath>
     </Reference>
     <Reference Include="Hqv.CSharp.Common.Web, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Hqv.CSharp.Common.Web.0.0.3\lib\netstandard1.3\Hqv.CSharp.Common.Web.dll</HintPath>
+      <HintPath>..\packages\Hqv.CSharp.Common.Web.0.0.8\lib\netstandard1.3\Hqv.CSharp.Common.Web.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.Sqlite, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Sqlite.1.1.1\lib\net451\Microsoft.Data.Sqlite.dll</HintPath>
@@ -60,6 +63,9 @@
     </Reference>
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -100,7 +106,7 @@
       <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq.Dynamic.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.7\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.7.6\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Http.4.3.2\lib\net46\System.Net.Http.dll</HintPath>

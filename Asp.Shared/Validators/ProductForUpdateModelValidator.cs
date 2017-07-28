@@ -1,5 +1,5 @@
 using FluentValidation;
-using Hqv.CSharp.Common.Extensions;
+using Hqv.CSharp.Common.Utilities;
 using WebApiPattern.Asp.Shared.Models;
 
 namespace WebApiPattern.Asp.Shared.Validators

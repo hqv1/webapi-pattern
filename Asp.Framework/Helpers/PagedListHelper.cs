@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Web.Http.Routing;
-using Hqv.CSharp.Common.Extensions;
+using Hqv.CSharp.Common.Utilities;
 using Hqv.CSharp.Common.Web.Api;
 
 namespace WebApiPattern.Asp.Framework.Helpers

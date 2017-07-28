@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Hqv.CSharp.Common" Version="0.0.3" />
-    <PackageReference Include="Hqv.CSharp.Common.Web" Version="0.0.3" />
+    <PackageReference Include="Hqv.CSharp.Common" Version="0.2.6" />
+    <PackageReference Include="Hqv.CSharp.Common.Web" Version="0.0.8" />
   </ItemGroup>
 
 </Project>
